@@ -1,7 +1,16 @@
 # Polygonal Surface Reconstruction from Sparse Point Clouds
 
 This project implements a **surface reconstruction algorithm based on alpha complex** for sparse 3D point clouds.  
-The goal is to reconstruct a surface by selecting appropriate simplices from the Delaunay complex using geometric and optimization-based criteria.
+The goal is to reconstruct a surface by selecting appropriate simplices from the alpha complex using geometric and optimization-based criteria.
+
+Given a set of 3D points with unoriented normals sampled from
+the outer boundary of an object, the Delaunay Surface Reconstruction
+method outputs a watertight surface mesh interpolating the input point set.
+
+The method first reduces the size of the point set by voxel downsampling.
+Then an alpha shape is computed, which contains the desired boundary/surface.
+Finally an optimal subset of the candidate faces is selected through optimization
+under hard constraints that enforce the final model to be manifold and watertight.
 
 The implementation is written in **C++**, relies on **CGAL** for geometric computations, and uses open-source solver **SCIP** as an optimization backend.
 
