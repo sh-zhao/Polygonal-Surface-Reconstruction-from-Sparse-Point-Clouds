@@ -40,6 +40,9 @@ int main(int argc, char* argv[])
     return EXIT_FAILURE;
   }
 
+  std::optional<double> alpha;
+  if (argc > 2) alpha = std::stod(argv[2]);
+
   std::vector<PN> points; // store points
 
   std::cout << "Loading point cloud: " << input_file << "..." << std::endl;
@@ -74,7 +77,7 @@ int main(int argc, char* argv[])
   std::cout << "Reconstructing...";
   t.reset();
 
-  if (!algo.reconstruct(model)) {
+  if (!algo.reconstruct(model, alpha)) {
     std::cerr << "Failed: " << algo.error_message() << std::endl;
     return EXIT_FAILURE;
   }
