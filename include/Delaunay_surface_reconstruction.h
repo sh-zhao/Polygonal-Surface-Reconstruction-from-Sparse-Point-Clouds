@@ -83,8 +83,7 @@ Given a set of 3D points with unoriented normals sampled from
 the outer boundary of an object, the Delaunay Surface Reconstruction
 method outputs a watertight surface mesh interpolating the input point set.
 
-The method first reduces the size of the point set by voxel downsampling.
-Then an alpha shape is computed, which contains the desired boundary/surface.
+The method first computes an alpha shape, which contains the desired boundary/surface.
 Finally an optimal subset of the candidate faces is selected through optimization
 under hard constraints that enforce the final model to be manifold and watertight.
 
