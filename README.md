@@ -57,9 +57,9 @@ For example, if you want to run the code with a customized alpha value 1000, the
     ./bin/delaunay_surface_reconstruction ./example/rabbit.ply 1000
 
 ## Notes
-The current solver SCIP can handle only sparse point clouds (~1000 points), a better choice is the Gurobi solver, which more efficient and reliable.
+The current solver SCIP can handle only sparse point clouds (~1000 points), a better choice is the Gurobi solver, which more efficient and reliable (It can handle ~1500 with a few seconds).
 To use Gurobi, you must install the software and [obtain a license](https://www.gurobi.com/downloads/end-user-license-agreement-academic/), which is available at no cost for academic purposes. Additionally, you may need to update the directory paths in FindGUROBI.cmake so that CMake can correctly locate the installation.
 
-Acknowledgments
+## Acknowledgments
 
 We thank the data provider: Huang, Zhangjin, et al. "Surface reconstruction from point clouds: A survey and a benchmark."
